@@ -1,5 +1,5 @@
 git add .
 echo "files added"
 git commit -m "$(date)"
-echo "commite comment entered using date command"
+echo "commit comment entered using date command"
 git push origin master
