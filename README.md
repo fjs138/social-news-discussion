@@ -1,2 +1,2 @@
 # redditclone
-a clone of the massively sucessful, wildly popular social platform / message board, powered by AngularJS.
+A clone of the wildly popular social message board Reddit. Powered by the MEAN stack.
