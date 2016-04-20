@@ -3,6 +3,7 @@ A clone of the wildly popular social message board Reddit.
 
 # Technology Stack
 Framework: AngularJS
+
 Server: Node.js
 Database: MongoDB + Mongoose.js, for adding structure to MongoDB
 Client-side routing: Angular ui-router
