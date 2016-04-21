@@ -5,7 +5,7 @@ A clone of the wildly popular social message board Reddit.
 
 
 | Technology    	| Use           	  | Description     										  |
-| ------------------|:-------------------:| :----------------:										  |
+| :------------------|:-------------------| :----------------										  |
 | AngularJS     	| Frontend 			  |JavaScript web-app framework for dynamic views in web-apps. |
 | Express   		| Backend 			  | Minimal, flexible web-app framework for Node.js.							  |
 | Node.js 			| Server     |Event-driven I/O server-side JavaScript environment.				  |
