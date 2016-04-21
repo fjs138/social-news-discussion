@@ -16,14 +16,14 @@ Angular ui-router
 ##Styling:
 Twitter Bootstrap
 
-| Technology    	| Use           	  | Description      |
-| ------------------|:-------------------:| ----------------:|
-| AngularJS     	| frontend 			  |fregrwgwregwregrwe|
-| Express   		| backend 			  | centered     $12 |
-| Node.js 			| serverare neat      |    $1 			 |
-| MongoDB			| database			  |					 |
-| Angular ui-router | client-side routing |					 |
-| Twitter Bootstrap | Styling			  |					 |
+| Technology    	| Use           	  | Description     										  |
+| ------------------|:-------------------:| ----------------:										  |
+| AngularJS     	| frontend 			  |JavaScript web-app framework								  |
+| Express   		| backend 			  | web-dev framework for Node.js							  |
+| Node.js 			| server     |Event-driven I/O server-side JavaScript environment				  |
+| MongoDB			| database			  |	+ Mongoose.js, for adding structure to MongoDB            |
+| Angular ui-router | client-side routing |solution to flexible routing with nested views in AngularJS|
+| Twitter Bootstrap | Styling			  |mobile-first HTML, CSS, and JavaScript front-end framework |
 
 
 # Project Specifications
