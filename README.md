@@ -1,15 +1,19 @@
 # redditclone
 A clone of the wildly popular social message board Reddit. 
 
-# Technology Stack
-Framework: AngularJS
+# Technology Stack:
+##Frameworks:
+AngularJS - frontend
+Express - backend
 
-Server: Node.js
+##Server:
+Node.js
 
-Database: MongoDB + Mongoose.js, for adding structure to MongoDB
+##Database:
+MongoDB + Mongoose.js, for adding structure to MongoDB
 
+##Other:
 Client-side routing: Angular ui-router
-
 Styling: Twitter Bootstrap
 
 
