@@ -16,6 +16,14 @@ Angular ui-router
 ##Styling:
 Twitter Bootstrap
 
+| Technology    	| Use           	  | Description      |
+| ------------------|:-------------------:| ----------------:|
+| AngularJS     	| frontend 			  |fregrwgwregwregrwe|
+| Express   		| backend 			  | centered     $12 |
+| Node.js 			| serverare neat      |    $1 			 |
+| MongoDB			| database			  |					 |
+| Angular ui-router | client-side routing |					 |
+| Twitter Bootstrap | Styling			  |					 |
 
 
 # Project Specifications
