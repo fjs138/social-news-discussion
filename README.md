@@ -5,14 +5,14 @@ A clone of the wildly popular social message board Reddit.
 
 
 | Technology    	| Use           	  | Description     										  |
-| ------------------|:-------------------:| ----------------:										  |
-| AngularJS     	| frontend 			  |JavaScript web-app framework for dynamic views in web-apps. |
-| Express   		| backend 			  | Minimal, flexible web-app framework for Node.js.							  |
-| Node.js 			| server     |Event-driven I/O server-side JavaScript environment.				  |
-| MongoDB			| database			  |	Next-generation NoSQL / JSON database.            |
+| ------------------|:-------------------:| :----------------:										  |
+| AngularJS     	| Frontend 			  |JavaScript web-app framework for dynamic views in web-apps. |
+| Express   		| Backend 			  | Minimal, flexible web-app framework for Node.js.							  |
+| Node.js 			| Server     |Event-driven I/O server-side JavaScript environment.				  |
+| MongoDB			| Database			  |	Next-generation NoSQL / JSON database.            |
 | Twitter Bootstrap | Styling			  |The most popular HTML, CSS, and JS framework for web projects.|
-| Angular ui-router | client-side routing |Solution to flexible routing with nested views in AngularJS.|
-| Mongoose.js       | for adding structure to MongoDB |Writing MongoDB boilerplate is a drag. |
+| Angular ui-router | Client-side routing |Solution to flexible routing with nested views in AngularJS.|
+| Mongoose.js       | For adding structure to MongoDB |Writing MongoDB boilerplate is a drag. |
 
 # Project Specifications
 
