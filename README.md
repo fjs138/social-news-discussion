@@ -7,12 +7,12 @@ A clone of the wildly popular social message board Reddit.
 | Technology    	| Use           	  | Description     										  |
 | ------------------|:-------------------:| ----------------:										  |
 | AngularJS     	| frontend 			  |JavaScript web-app framework for dynamic views in web-apps |
-| Express   		| backend 			  | minimal, flexible web-app framework for Node.js							  |
+| Express   		| backend 			  | Minimal, flexible web-app framework for Node.js							  |
 | Node.js 			| server     |Event-driven I/O server-side JavaScript environment				  |
-| MongoDB			| database			  |	+ Mongoose.js, for adding structure to MongoDB            |
+| MongoDB			| database			  |	next-generation NoSQL / JSON database            |
 | Angular ui-router | client-side routing |Solution to flexible routing with nested views in AngularJS|
 | Twitter Bootstrap | Styling			  |The most popular HTML, CSS, and JS framework for web projects|
-
+| Mongoose.js       | for adding structure to MongoDB |writing MongoDB boilerplate is a drag |
 
 # Project Specifications
 
