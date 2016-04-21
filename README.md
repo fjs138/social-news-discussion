@@ -58,3 +58,7 @@ by the use of the `render()` function and can contain logic that allows
 the server to dynamically change the content. This functionality will
 not be used in this project however. This is because the Angular.js
 framework is being used to create the dynamic experience instead.
+
+# Instructions
+Start the application by running `npm start` from within the `redditclone` folder.
+Go to `http://localhost:3000` in a modern web browser to see the Angular application.
