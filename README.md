@@ -35,11 +35,11 @@ Upvote posts and comments
 `app.js` - The launching point of the app. Imports all server files
 including modules, configure routes, open database connections, etc.
 
-`bin/` - Contains executable scripts, notably the 'www' script, which
-includes app.js and when executed launches our Node.js server
+`bin/` - Contains executable scripts, notably the `www` script, which
+includes `app.js` and when executed launches our Node.js server
 
 `node_modules/` - Contains of all external modules used in the project.
-The command 'npm install' populates this.
+The command `npm install` populates this.
 
 `package.json` - Defines a JSON object that contains various properties
 of our project, including names and version numbers.
@@ -58,7 +58,7 @@ when generating the project, views will have the extension '.ejs' rather
 than '.jade'. This means the views will be in HTML instead of Jade.
 
 Note: Views are capable of being rendered <i>directly</i> by Node.js
-by the use of the 'render()' function and can contain logic that allows
+by the use of the `render()` function and can contain logic that allows
 the server to dynamically change the content. This functionality will
 not be used in this project however. This is because the Angular.js
 framework is being used to create the dynamic experience instead.
