@@ -60,11 +60,16 @@ not be used in this project however. This is because the Angular.js
 framework is being used to create the dynamic experience instead.
 
 ## The actions that users can perform are mapped to routes as follows:
-`GET /posts` - return a list of posts and associated metadata<br><br>
-`POST /posts` - create a new post<br><br>
-`GET /posts/:id` - return an individual post with associated comments<br><br>
-`PUT /posts/:id/upvote` - upvote a post, notice we use the post ID in the URL<br><br>
-`POST /posts/:id/comments` - add a new comment to a post by ID<br><br>
+`GET /posts` - return a list of posts and associated metadata
+
+`POST /posts` - create a new post
+
+`GET /posts/:id` - return an individual post with associated comments
+
+`PUT /posts/:id/upvote` - upvote a post, notice we use the post ID in the URL
+
+`POST /posts/:id/comments` - add a new comment to a post by ID
+
 `PUT /posts/:id/comments/:id/upvote` - upvote a comment
 
 # Instructions
