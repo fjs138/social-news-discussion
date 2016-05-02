@@ -1,73 +1,131 @@
-var app = angular.module('redditclone', ['ui.router']);
+var app = angular.module('redditclone', [
+        'ui.router'
+]);
 
 app.config([
     '$stateProvider',
     '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
+		
         $stateProvider
-        .state('home', {
-            url: '/home',
-            templateUrl: '/home.html',
-            controller: 'MainCtrl'
-        })
-        .state('posts', {
-            url: '/posts/{id}',
-            templateUrl: '/posts.html',
-            controller: 'PostsCtrl'
-        });
-        $urlRouterProvider.otherwise('home');
-    }]);
+            //home state
+            .state('home', {
+                url: '/home',
+                templateUrl: '/home.html',
+                controller: 'MainCtrl',
+                resolve: {
+                    postPromise: ['postRepository', function(postRepository){
+                        return postRepository.getAll();
+                    }]
+                }
+            })
+			//posts state
+            .state('posts', {
+                url: '/posts/{id}',
+                templateUrl: '/posts.html',
+                controller: 'PostsCtrl',
+                resolve: {
+                    post: ['$stateParams', 'postRepository', function($stateParams, postRepository) {
+                        return postRepository.get($stateParams.id);
+                    }]
+                }
+            });
 
-app.factory('posts', [function() {
-    // service body
+        $urlRouterProvider.otherwise('home');
+    }
+]);
+
+app.factory('postRepository', ['$http', function($http){
     var o = {
         posts: []
     };
+
+    o.get = function(id) {
+        return $http.get('/posts/' + id).then(function(res){
+            return res.data;
+        });
+    };
+
+    o.getAll = function() {
+        return $http.get('/posts').success(function(data){
+            angular.copy(data, o.posts);
+        });
+    };
+
+    o.create = function(post) {
+        return $http.post('/posts', post).success(function(data){
+            o.posts.push(data);
+        });
+    };
+
+    o.upvote = function(post) {
+        return $http.put('/posts/' + post._id + '/upvote')
+            .success(function(data){
+                post.upvotes += 1;
+            });
+    };
+
+    o.addComment = function(id, comment) {
+        return $http.post('/posts/' + id + '/comments', comment);
+    };
+
+    o.upvoteComment = function(post, comment) {
+        return $http.put('/posts/' + post._id + '/comments/'+ comment._id + '/upvote')
+            .success(function(data){
+                comment.upvotes += 1;
+            });
+    };
+
     return o;
 }]);
 
+//Main Controller
 app.controller('MainCtrl', [
     '$scope',
-    'posts',
-    function($scope, posts) {
-
+    'postRepository',
+    function($scope, postRepository){
         $scope.test = 'Hello world!';
-        $scope.posts = posts.posts;
 
-        $scope.addPost = function() {
+        $scope.posts = postRepository.posts;
+
+        $scope.addPost = function(){
             if(!$scope.title || $scope.title === '') { return; }
-            $scope.posts.push({
+            postRepository.create({
                 title: $scope.title,
-                link: $scope.link,
-                upvotes: 0,
-                comments: [
-                    {author: 'Joe', body: 'Cool post!', upvotes: 0},
-                    {author: 'Bob', body: 'Great idea but everything is wrong!', upvotes: 0}
-                ]
+                link: $scope.link
             });
             $scope.title = '';
             $scope.link = '';
         };
+
         $scope.incrementUpvotes = function(post) {
-            post.upvotes += 1;
+            postRepository.upvote(post);
         };
+
     }
 ]);
+
+// Posts Controller
 app.controller('PostsCtrl', [
     '$scope',
-    '$stateParams',
-    'posts',
-    function($scope, $stateParams, posts) {
-        $scope.post = posts.posts[$stateParams.id];
+    'postRepository',
+    'post',
+    function($scope, postRepository, post){
+        $scope.post = post;
 
-        $scope.addComment = function() {
+        $scope.addComment = function(){
             if($scope.body === '') { return; }
-            $scope.post.comments.push({
+            postRepository.addComment(post._id, {
                 body: $scope.body,
-                author: 'user',
-                upvotes: 0
+                author: 'user'
+            }).success(function(comment) {
+                $scope.post.comments.push(comment);
             });
             $scope.body = '';
         };
 
-    }]);
+        $scope.incrementCommentUpvotes = function(comment){
+            postRepository.upvoteComment(post, comment);
+        };
+    }
+]);
