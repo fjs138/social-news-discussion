@@ -7,6 +7,34 @@ var bodyParser = require('body-parser');
 
 // Require mongoose, connect and require mongoose models
 var mongoose = require('mongoose');
+
+// Create and authenticate users
+var UserSchema = new mongoose.Schema({
+	username: {type: String, lowercase: true, unique: true},
+	hash: String,
+	salt: String
+});
+
+mongoose.model('User', UserSchema);
+
+// Setting and validating passwords
+var crypto = require('crypto');
+
+// Accept a password then generate a salt and associated password hash
+UserSchema.methods.setPassword = function(password){
+	this.salt = crypto.randomBytes(16).toString('hex');
+	// pbkdf2Sync() function takes four parameters:
+	// password, salt, iterations, and key length. 
+	this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+};
+
+// Accept a password and compare it to the hash stored, return a boolean
+UserSchema.methods.validPassword = function(password) {
+	var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+	
+	return this.hash == hash;
+};
+
 mongoose.connect('mongodb://localhost/news');
 require('./models/Posts');
 require('./models/Comments');
