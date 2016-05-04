@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var jwt = require('jsonwebtoken');
 
 // Require mongoose, connect and require mongoose models
 var mongoose = require('mongoose');
@@ -33,6 +34,23 @@ UserSchema.methods.validPassword = function(password) {
 	var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
 	
 	return this.hash == hash;
+};
+
+UserSchema.methods.generateJWT = function() {
+	
+	// Set expiration to 60 days
+	var today = new Date();
+	var exp = new Date(today);
+	exp.setDate(today.getDate() + 60);
+	
+	return jwt.sign({
+		_id: this._id
+		username: this.username,
+		exp: parseInt(exp.getTime() / 1000),
+		// Hardcoded secret for signing tokens for security.
+		// This should be referenced with an environment variable
+		// and kept out of the codebase, not hardcoded explicitly here.
+	}, 'SECRET');
 };
 
 mongoose.connect('mongodb://localhost/news');
