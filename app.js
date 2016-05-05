@@ -24,7 +24,7 @@ var crypto = require('crypto');
 
 // Accept a password then generate a salt and associated password hash
 UserSchema.methods.setPassword = function(password){
-	this.salt = crypto.randomBytes(16).toString('hex');
+  this.salt = crypto.randomBytes(16).toString('hex');
 	// pbkdf2Sync() function takes four parameters:
 	// password, salt, iterations, and key length. 
 	this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
@@ -32,9 +32,9 @@ UserSchema.methods.setPassword = function(password){
 
 // Accept a password and compare it to the hash stored, return a boolean
 UserSchema.methods.validPassword = function(password) {
-	var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
-	
-	return this.hash == hash;
+  var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+
+  return this.hash === hash;
 };
 
 UserSchema.methods.generateJWT = function() {
@@ -51,7 +51,7 @@ UserSchema.methods.generateJWT = function() {
 		// Hardcoded secret for signing tokens for security.
 		// This should be referenced with an environment variable
 		// and kept out of the codebase, not hardcoded explicitly here.
-	}, 'SECRET');
+ }, 'SECRET');
 };
 
 mongoose.connect('mongodb://localhost/news');
