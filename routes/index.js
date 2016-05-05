@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var jwt = require('express-jwt');
+var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -24,9 +25,11 @@ router.get('/posts', function(req, res, next) {
 	});
 });
 // Create new post; making a POST request to the server 
-router.post('/posts', function(req, res, next) {
+router.post('/posts', auth, function(req, res, next) {
 	var post = new Post(req.body);
-	
+	// ---added individually start
+	post.author = req.payload.username;
+	// ---added individually end
 	post.save(function(err, post) {
 		if(err) { return next(err); }
 		
@@ -89,7 +92,7 @@ router.delete('/posts/:post', function(req, res) {
 	});
 });
 // Upvote post
-router.put('/posts/:post/upvote', function(req, res, next) {
+router.put('/posts/:post/upvote', auth, function(req, res, next) {
 	req.post.upvote(function(err, post) {
 		if (err) { return next(err); }
 		
@@ -97,7 +100,7 @@ router.put('/posts/:post/upvote', function(req, res, next) {
 	});
 });
 // Upvote comment
-router.put('/posts/:post/comments/:comment/upvote', function (req, res, next) {
+router.put('/posts/:post/comments/:comment/upvote', auth, function (req, res, next) {
 	req.comment.upvote(function (err, comment) {
 		if (err) {
 			return next(err);
@@ -107,9 +110,12 @@ router.put('/posts/:post/comments/:comment/upvote', function (req, res, next) {
 	});
 });
 // Post comment
-router.post('/posts/:post/comments', function(req, res, next) {
+router.post('/posts/:post/comments', auth, function(req, res, next) {
 	var comment = new Comment(req.body);
 	comment.post = req.post;
+	// ---added individually start
+	comment.author = req.payload.username;
+	// ---added individually stop
 	comment.save(function(err, comment) {
 		if (err) { return next(err); }
 		
