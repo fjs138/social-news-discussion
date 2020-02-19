@@ -75,7 +75,9 @@ framework is being used to create the dynamic experience instead.
 # Instructions
 Start the application by running `npm start` from within the `redditclone` folder.
 Go to `http://localhost:3000` in a modern web browser to see the Angular application.
-<br>
+<br><br>
+# License
+
 MIT License
 
 Copyright (c) 2015 Frank Santaguida
