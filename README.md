@@ -1,7 +1,9 @@
 # redditclone
 A clone of the wildly popular social message board Reddit. 
 <br>
-# Technology Stack:
+
+## The Goal
+## Technology Stack
 
 
 | Technology    	| Use           	  | Description     										  |
@@ -14,7 +16,7 @@ A clone of the wildly popular social message board Reddit.
 | Angular ui-router | Client-side routing |Solution to flexible routing with nested views in AngularJS.|
 | Mongoose.js       | For adding structure to MongoDB |Writing MongoDB boilerplate is a drag. |
 
-# Project Specifications
+## Project Specifications
 
 Create new posts
 
@@ -26,8 +28,8 @@ View comments for a given post
 
 Upvote posts and comments
 
-# Anatomy of 'redditclone' Node.js Project
-## located in sub-folder `redditclone`
+## Anatomy of Project
+### located in sub-folder `redditclone`
 `app.js` - The launching point of the app. Imports all server files
 including modules, configure routes, open database connections, etc.
 
@@ -59,7 +61,7 @@ the server to dynamically change the content. This functionality will
 not be used in this project however. This is because the Angular.js
 framework is being used to create the dynamic experience instead.
 
-## The actions that users can perform are mapped to routes as follows:
+### The actions that users can perform are mapped to routes as follows:
 `GET /posts` - return a list of posts and associated metadata
 
 `POST /posts` - create a new post
@@ -72,11 +74,12 @@ framework is being used to create the dynamic experience instead.
 
 `PUT /posts/:id/comments/:id/upvote` - upvote a comment
 
-# Instructions
+### Instructions
 Start the application by running `npm start` from within the `redditclone` folder.
 Go to `http://localhost:3000` in a modern web browser to see the Angular application.
 <br><br>
-# License
+
+## License
 
 MIT License
 
