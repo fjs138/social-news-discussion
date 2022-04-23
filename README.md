@@ -9,12 +9,16 @@ A clone of the wildly popular social message board Reddit.
 | Technology    	| Use           	  | Description     										  |
 | :------------------|:-------------------| :----------------										  |
 | AngularJS     	| Frontend 			  |JavaScript web-app framework for dynamic views in web-apps. |
-| Express   		| Backend 			  | Minimal, flexible web-app framework for Node.js.							  |
-| Node.js 			| Server     |Event-driven I/O server-side JavaScript environment.				  |
-| MongoDB			| Database			  |	Next-generation NoSQL / JSON database.            |
-| Twitter Bootstrap | Styling			  |The most popular HTML, CSS, and JS framework for web projects.|
 | Angular ui-router | Client-side routing |Solution to flexible routing with nested views in AngularJS.|
+| Bootstrap | Styling			  |The most popular HTML, CSS, and JS framework for web projects.|
+| Node.js 			| Server     |Event-driven I/O server-side JavaScript environment.				  |
+| Express   		| Backend 			  | Minimal, flexible web-app framework for Node.js.							  |
+|EJS|alternative template engine|Embedded JavaScript templates|
+|Passport|authentication middleware|Passport is Express-compatible authentication middleware for Node.js.|
+| MongoDB			| Database			  |	Next-generation NoSQL / JSON database.            |
 | Mongoose.js       | For adding structure to MongoDB |Writing MongoDB boilerplate is a drag. |
+|jsonwebtoken|data exchange|An implementation of JSON Web Tokens.|
+|Morgan | logging|HTTP request logger middleware for node.js|
 
 ## Project Specifications
 
