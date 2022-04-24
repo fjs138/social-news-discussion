@@ -1,5 +1,5 @@
 # redditclone
-A clone of the wildly popular social message board Reddit. 
+reddit-like website powered by the MEAN stack
 <br>
 
 ## The Goal
