@@ -36,24 +36,13 @@ Attempt to reproduct reddit-like functionality, using the MEAN stack.
 ## Anatomy of Project
 | File/Folder    	| Purpose           	  |
 | :------------------|:-------------------|
-| app.js		 			| The launching point of the app. Imports all server files
-including modules, configure routes, open database connections, etc.|
-| bin/		 			| Contains executable scripts, notably the `www` script, which
-includes `app.js` and when executed launches our Node.js server    |
-|node_modules/|Contains of all external modules used in the project.
-The command `npm install` populates this.|
-| package.json	 			| Defines a JSON object that contains various properties
-of our project, including names and version numbers.
-Defines what modules our project depends on. See the link for details:
-https://www.npmjs.org/doc/package.json.html     |
-| public/| Anything in this folder will be made publicly available by
-the server. Contains JavaScript, CSS, images, and templates that
-the client(s) are intended to access.     |
-| routes/| Contains the Node.js controllers. This is where most of the
-backend code will be stored.     |
-| views/| Contains the various views. Due to specifying the `--ejs` flag
-when generating the project, views will have the extension '.ejs' rather
-than '.jade'. This means the views will be in HTML instead of Jade.     |
+| app.js		 			| The launching point of the app. Imports all server files including modules, configure routes, open database connections, etc.|
+| bin/		 			| Contains executable scripts, notably the `www` script, which includes `app.js` and when executed launches our Node.js server    |
+|node_modules/|Contains external modules used in the project, installed by `npm install`|
+| package.json	 			| Defines a JSON object that contains various properties of our project, including names and version numbers. Defines project module dependencies.  |
+| public/| Anything in this folder will be made publicly available by the server. Contains JavaScript, CSS, images, and templates that the client(s) are intended to access.     |
+| routes/| Contains the Node.js controllers. This is where most of the backend code will be stored.     |
+| views/| Contains the various views. Due to specifying the `--ejs` flag when generating the project, views will have the extension '.ejs' rather than '.jade'. This means the views will be in HTML instead of Jade.     |
 | src/components/characters/CharacterItem.js| Individual character profile component     |
 
 
