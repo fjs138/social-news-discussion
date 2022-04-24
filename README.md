@@ -23,15 +23,15 @@ Attempt to reproduct reddit-like functionality, using the MEAN stack.
 
 ## Project Specifications
 
-Create new posts
+* Create new posts
 
-View all posts ordered by upvotes
+* View all posts ordered by upvotes
 
-Add comments about a given post
+* Add comments about a given post
 
-View comments for a given post
+* View comments for a given post
 
-Upvote posts and comments
+* Upvote posts and comments
 
 ## Anatomy of Project
 ### located in sub-folder `redditclone`
