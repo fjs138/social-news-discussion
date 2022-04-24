@@ -3,6 +3,7 @@ A clone of the wildly popular social message board Reddit.
 <br>
 
 ## The Goal
+Attempt to reproduct reddit-like functionality, using the MEAN stack. 
 ## Technology Stack
 
 
