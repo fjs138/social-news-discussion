@@ -43,7 +43,6 @@ Attempt to reproduct reddit-like functionality, using the MEAN stack.
 | public/| Anything in this folder will be made publicly available by the server. Contains JavaScript, CSS, images, and templates that the client(s) are intended to access.     |
 | routes/| Contains the Node.js controllers. This is where most of the backend code will be stored.     |
 | views/| Contains the various views. Due to specifying the `--ejs` flag when generating the project, views will have the extension '.ejs' rather than '.jade'. This means the views will be in HTML instead of Jade.     |
-| src/components/characters/CharacterItem.js| Individual character profile component     |
 
 
 Note: Views are capable of being rendered <i>directly</i> by Node.js
