@@ -1,5 +1,5 @@
 # redditclone
-reddit-like website built with the MEAN stack.<br>
+reddit-like website, built with the MEAN stack.<br>
 
 ## The Goal
 Attempt to reproduce reddit-like functionality, using the MEAN stack. 
