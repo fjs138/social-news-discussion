@@ -1,8 +1,8 @@
 # redditclone
-reddit-like website, built with the MEAN stack.<br>
+Social news aggregator with ratings and discussion<br>
 
 ## The Goal
-Attempt to reproduce reddit-like functionality, using the MEAN stack. 
+Create a news aggregator using the MEAN stack.
 
 ## Technology Stack
 
