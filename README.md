@@ -1,5 +1,5 @@
 # redditclone
-Social news aggregator with ratings and discussion<br>
+Social news aggregator, with ratings and discussion<br>
 
 ## The Goal
 Create a news aggregator using the MEAN stack.
